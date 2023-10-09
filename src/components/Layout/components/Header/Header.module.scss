@@ -16,13 +16,17 @@
     align-items: center;
     justify-content: space-between;
 }
+.search-bar,
+.search-result {
+    width: 361px;
+}
 
 .search-bar {
     position: relative;
     background-color: rgba(22, 24, 35, 0.06);
     padding: 0 0 0 16px;
     border-radius: var(--search-border-radius);
-    min-width: 361px;
+
     display: flex;
     height: var(--search-height);
     border: 1.5px solid transparent;
@@ -49,6 +53,13 @@
         height: calc(var(--search-height) - var(--search-top-spacer) * 2);
         background-color: rgba(22, 24, 35, 0.12);
     }
+}
+
+.search-title {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }
 
 .clear,

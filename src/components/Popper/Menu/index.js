@@ -33,6 +33,7 @@ function Menu({ children, items = [], onChange = deafaultFn }) {
             );
         });
     };
+
     return (
         <Tippy
             delay={[0, 700]}
@@ -44,7 +45,7 @@ function Menu({ children, items = [], onChange = deafaultFn }) {
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
                             <Header
-                                title="Language"
+                                title={current.title}
                                 onBack={() => {
                                     setHistory((pre) => pre.slice(0, pre.length - 1));
                                 }}

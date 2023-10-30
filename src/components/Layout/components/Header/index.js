@@ -15,7 +15,6 @@ import {
     faEarthAsia,
     faQuestionCircle,
     faKeyboard,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
@@ -25,9 +24,12 @@ import { Fragment, useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(style);
-
+console.log(<InboxIcon />);
+console.log(<UploadIcon />);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -138,9 +140,19 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <Fragment>
-                            <HeadLessTippy delay={[0, 200]} content="Upload video" placement="bottom">
+                            <HeadLessTippy delay={[0, 100]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
+                                </button>
+                            </HeadLessTippy>
+                            <HeadLessTippy delay={[0, 100]} content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </HeadLessTippy>
+                            <HeadLessTippy delay={[0, 100]} content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </HeadLessTippy>
                         </Fragment>
@@ -152,10 +164,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f8eab53768e38f253367d54750380dee~c5_100x100.jpeg?x-expires=1698760800&x-signature=1OwDnBBCVRhu3tGjqzHvUyTlZDU%3D"
                                 alt="Nguyen Van A"
+                                fallBack="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

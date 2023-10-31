@@ -3,6 +3,7 @@ import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
 import { HeaderOnly } from '~/components/Layout';
 import Search from '~/pages/Search';
+import Profile from '~/pages/Profile';
 
 const publicRoutes = [
     {
@@ -12,6 +13,10 @@ const publicRoutes = [
     {
         path: '/following',
         component: Following,
+    },
+    {
+        path: '/:nickname', // Nếu muốn bắt đầu bắt kí tự chung và những kí tự sau sẽ được biến động thì dùng ":"
+        component: Profile,
     },
     {
         path: '/upload',

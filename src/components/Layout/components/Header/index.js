@@ -1,11 +1,14 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import routes from '~/config/routes';
+
 import HeadLessTippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import Button from '~/components/Button';
 import style from './Header.module.scss';
+import { Link } from 'react-router-dom';
 import image from '~/assets/images';
 import {
     faEllipsisVertical,
@@ -96,7 +99,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={image.logo} alt="Tiktok" />
+                    <Link to={routes.home} className={cx('logo-link')}>
+                        <img src={image.logo} alt="Tiktok" />
+                    </Link>
                 </div>
 
                 <Search />

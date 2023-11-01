@@ -1,3 +1,5 @@
+import routes from '~/config/routes';
+
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
@@ -7,24 +9,24 @@ import Profile from '~/pages/Profile';
 
 const publicRoutes = [
     {
-        path: '/',
+        path: routes.home,
         component: Home,
     },
     {
-        path: '/following',
+        path: routes.following,
         component: Following,
     },
     {
-        path: '/:nickname', // Nếu muốn bắt đầu bắt kí tự chung và những kí tự sau sẽ được biến động thì dùng ":"
+        path: routes.profile, // Nếu muốn bắt đầu bắt kí tự chung và những kí tự sau sẽ được biến động thì dùng ":"
         component: Profile,
     },
     {
-        path: '/upload',
+        path: routes.upload,
         component: Upload,
         layout: HeaderOnly,
     },
     {
-        path: '/search',
+        path: routes.search,
         component: Search,
         layout: null,
     },

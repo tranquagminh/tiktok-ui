@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const request = axios.create({
-    baseURL: 'https://tiktok.fullstack.edu.vn/api/',
+    baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 // Khi có async trước 1 hàm thì khi chạy sẽ ra 1 promise

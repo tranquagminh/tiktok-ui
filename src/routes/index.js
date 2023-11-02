@@ -1,32 +1,32 @@
-import routes from '~/config/routes';
+import config from '~/config';
 
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
-import { HeaderOnly } from '~/components/Layout';
+import { HeaderOnly } from '~/layouts';
 import Search from '~/pages/Search';
 import Profile from '~/pages/Profile';
 
 const publicRoutes = [
     {
-        path: routes.home,
+        path: config.routes.home,
         component: Home,
     },
     {
-        path: routes.following,
+        path: config.routes.following,
         component: Following,
     },
     {
-        path: routes.profile, // Nếu muốn bắt đầu bắt kí tự chung và những kí tự sau sẽ được biến động thì dùng ":"
+        path: config.routes.profile, // Nếu muốn bắt đầu bắt kí tự chung và những kí tự sau sẽ được biến động thì dùng ":"
         component: Profile,
     },
     {
-        path: routes.upload,
+        path: config.routes.upload,
         component: Upload,
         layout: HeaderOnly,
     },
     {
-        path: routes.search,
+        path: config.routes.search,
         component: Search,
         layout: null,
     },

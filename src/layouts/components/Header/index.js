@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import routes from '~/config/routes';
+import config from '~/config';
 
 import HeadLessTippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -99,7 +99,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={routes.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={image.logo} alt="Tiktok" />
                     </Link>
                 </div>
